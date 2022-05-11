@@ -52,7 +52,6 @@ def max2Elems(arr):
 
 @dispatch(int, object)
 def maxElemInvariant(i, arr):
-    print(arr)
     return max(arr[0:i])
 
 @dispatch(int, object, int)
