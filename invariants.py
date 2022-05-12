@@ -1,5 +1,4 @@
 from multipledispatch import dispatch
-from typing import List
 
 @dispatch(int, int, object, int)
 def assertInvariant(s, i, invariant, n):
@@ -32,5 +31,9 @@ def assertInvariant(s, i, invariant, arr, n):
 @dispatch(float, int, object)
 def assertInvariant(s, i, invariant):
     assert(s == invariant(i))
+
+@dispatch(int, object, object)
+def assertInvariantBool(n, arr, invariant):
+    assert(invariant(n, arr))
 
 
